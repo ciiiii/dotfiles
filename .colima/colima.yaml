@@ -1,0 +1,11 @@
+vm:
+    cpu: 2
+    disk: 10
+    memory: 2
+    arch: x86
+    mounts: []
+runtime: docker
+kubernetes:
+    enabled: false
+    version: ""
+portinterface: ""
