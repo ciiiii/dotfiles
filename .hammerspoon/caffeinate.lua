@@ -1,8 +1,6 @@
-
 -- print(hs.caffeinate.watcher.screensaverDidStart)
 -- print(hs.caffeinate.watcher.screensaverWillStop)
 -- print(hs.caffeinate.watcher.screensaverDidStop)
-
 local function sleepWatch(eventType)
     print("sleepWatch" .. eventType)
     if (eventType == hs.caffeinate.watcher.screensaverDidStart) then

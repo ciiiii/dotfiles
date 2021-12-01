@@ -3,13 +3,12 @@ require('window')
 require('hotkey')
 require('caffeinate')
 
-
 local configDir = string.format("%s/.hammerspoon/", os.getenv("HOME"))
 
 local function watchConfgiDir(files)
     local doReload = false
     for _, file in pairs(files) do
-        print("####### "..file .. " had changed")
+        print("####### " .. file .. " had changed")
         if file:sub(-4) == ".lua" then
             doReload = true
             break
