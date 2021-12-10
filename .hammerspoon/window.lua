@@ -15,7 +15,7 @@ local appMethods = {
 
 local function handleWindowFocus(window, appName)
     local appObject = window:application()
-    print('Focused: ' .. appName .. "[" .. window:title() .. "]")
+    logger.f('WindowFocus: %s [%s]', appName, window:title())
     for app, fns in pairs(appMethods) do
         if app == appName then
             for i, fn in pairs(fns) do fn(appObject) end
