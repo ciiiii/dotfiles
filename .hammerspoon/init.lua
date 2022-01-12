@@ -7,7 +7,7 @@ hs.notify.show("hammerspoon", "Loading Config", "")
 
 local configDir = string.format("%s/.hammerspoon/", os.getenv("HOME"))
 
-local function watchConfgiDir(files)
+local function watchConfigDir(files)
     local doReload = false
     for _, file in pairs(files) do
         logger.i("####### " .. file .. " had changed")
@@ -23,6 +23,6 @@ local function watchConfgiDir(files)
     end
 end
 
-local pathWatcher = hs.pathwatcher.new(configDir, watchConfgiDir)
+local pathWatcher = hs.pathwatcher.new(configDir, watchConfigDir)
 pathWatcher:start()
 
