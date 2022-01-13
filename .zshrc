@@ -217,3 +217,4 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # zprof
 # source ~/custom.zsh
 source ~/secret.zsh
+export PATH=~/scripts:$PATH
