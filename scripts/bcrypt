@@ -1,0 +1,10 @@
+#!/opt/homebrew/bin/python3
+import bcrypt
+import base64
+
+password = input("input your password: ")
+salt = bcrypt.gensalt()
+hashed = bcrypt.hashpw(password.encode('utf-8'), salt)
+print("=>bcrypt: {}".format(hashed))
+bhashed = base64.b64encode(hashed)
+print("=>base64: {}".format(bhashed))
