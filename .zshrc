@@ -175,6 +175,10 @@ function netshoot() {
     fi
 }
 
+function clean_netshoot() {
+    kubectl delete pod netshoot -n default --force
+}
+
 # python3 as default python
 alias python="python3"
 
