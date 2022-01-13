@@ -1,0 +1,27 @@
+#!/usr/bin/expect
+
+if { $argc != 1 } {
+    send_user "Usage: host\n"
+    exit
+}
+
+set HOST [lindex $argv 0]
+
+catch { spawn ssh jumpserver }
+expect {
+    "Opt>"
+    {
+        send "$HOST\r"
+    }
+}
+expect {
+    "itfarm*"
+    {
+        send "sudo su\r"
+    }
+}
+expect {
+    "*\[sudo\]*"
+    { send "$env(JUMPSERVER_PASSWORD)\r" }
+}
+interact
