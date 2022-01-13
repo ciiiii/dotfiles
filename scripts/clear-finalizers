@@ -1,0 +1,15 @@
+#!/bin/bash
+set -e
+
+resource=$1
+if [ -z "$resource" ]
+then
+    echo "need resource"
+    exit 1
+fi
+
+for target in $(kubectl get $resource | awk 'NR!=1{print $1}')
+do
+    echo "### start patch $resource/$target"
+    kubectl patch $resource/$target -p '{"metadata":{"finalizers":[]}}' --type=merge
+done
