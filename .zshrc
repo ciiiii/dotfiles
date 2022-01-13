@@ -47,6 +47,14 @@ SPACESHIP_KUBECTL_PREFIX='using '
 SPACESHIP_KUBECTL_SYMBOL=''
 SPACESHIP_KUBECTL_VERSION_SHOW=false
 
+# brew installed completion
+if type brew &>/dev/null
+then
+    FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+    autoload -Uz compinit
+    compinit
+fi
+
 source $ZSH/oh-my-zsh.sh
 
 SOCKS5_PROXY="http://127.0.0.1:1086"
@@ -202,14 +210,6 @@ function npm() {
     unset http_proxy unset https_proxy
     /opt/homebrew/bin/npm $@
 }
-
-# brew installed completion
-if type brew &>/dev/null
-then
-    FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-    autoload -Uz compinit
-    compinit
-fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
