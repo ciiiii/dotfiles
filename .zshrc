@@ -47,6 +47,10 @@ SPACESHIP_KUBECTL_PREFIX='using '
 SPACESHIP_KUBECTL_SYMBOL=''
 SPACESHIP_KUBECTL_VERSION_SHOW=false
 
+# brew installed binary
+export PATH=/opt/homebrew/bin:$PATH
+export PATH=/opt/homebrew/sbin:$PATH
+
 # brew installed completion
 if type brew &>/dev/null
 then
@@ -200,10 +204,6 @@ alias numfmt='gnumfmt'
 function fix_broken_app() {
     sudo xattr -d com.apple.quarantine $1
 }
-
-# brew installed binary
-export PATH=/opt/homebrew/bin:$PATH
-export PATH=/opt/homebrew/sbin:$PATH
 
 # helix config
 export HELIX_RUNTIME=$HOME/.config/helix/runtime
