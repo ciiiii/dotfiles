@@ -15,7 +15,7 @@ expect {
     }
 }
 expect {
-    "itfarm*"
+    "$env(JUMPSERVER_HOSTNAME)*"
     {
         send "sudo su\r"
     }
