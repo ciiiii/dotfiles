@@ -48,8 +48,12 @@ SPACESHIP_KUBECTL_SYMBOL=''
 SPACESHIP_KUBECTL_VERSION_SHOW=false
 
 # brew installed binary
-export PATH=/opt/homebrew/bin:$PATH
-export PATH=/opt/homebrew/sbin:$PATH
+if [[ $(uname -m) -eq "arm64" ]]
+then
+    export PATH=/opt/homebrew/bin:$PATH
+    export PATH=/opt/homebrew/sbin:$PATH
+fi
+
 
 # brew installed completion
 if type brew &>/dev/null
@@ -65,7 +69,7 @@ SOCKS5_PROXY="http://127.0.0.1:1086"
 HTTP_PROXY="http://127.0.0.1:1087"
 ALL_PROXY="http://127.0.0.1:7890"
 
-# cargo bi
+# cargo binary
 export PATH="$HOME/.cargo/bin:$PATH"
 # carg ENV
 source $HOME/.cargo/env
@@ -133,11 +137,10 @@ alias dockerentrypoint="docker inspect -f '{{.Config.Entrypoint}}'"
 # GO ENV config
 export GOPATH=$HOME/gopath
 export GOBIN=$GOPATH/bin
-export GOROOT="$(/opt/homebrew/bin/brew --prefix golang)/libexec"
+export GOROOT="$(brew --prefix golang)/libexec"
 export GOCACHE=$HOME/.cache/go
 export PATH=$PATH:$GOPATH/bin
 export GOPROXY=https://goproxy.io,direct
-#export GOPRIVATE="gitlab.oneitfarm.com"
 export GO111MODULE=on
 export GONOSUMDB=gitlab.oneitfarm.com/*
 
@@ -212,7 +215,7 @@ export HELIX_CONFIG=$HOME/.config/helix
 # npm without proxy
 function npm() {
     unset http_proxy unset https_proxy
-    /opt/homebrew/bin/npm $@
+    $(brew --prefix)/bin/npm $@
 }
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
