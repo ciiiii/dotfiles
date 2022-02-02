@@ -65,9 +65,9 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
-SOCKS5_PROXY="http://127.0.0.1:1086"
-HTTP_PROXY="http://127.0.0.1:1087"
-ALL_PROXY="http://127.0.0.1:7890"
+# SOCKS5_PROXY="http://127.0.0.1:1086"
+# HTTP_PROXY="http://127.0.0.1:1087"
+# ALL_PROXY="http://127.0.0.1:7890"
 
 # cargo binary
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -144,6 +144,10 @@ export GOPROXY=https://goproxy.io,direct
 export GO111MODULE=on
 export GONOSUMDB=gitlab.oneitfarm.com/*
 
+# Rust config
+alias rustdoc="rustup doc --toolchain=stable-x86_64-apple-darwin"
+
+
 export KUBECONFIG="$HOME/Documents/Develop/kubeconfig/config.yaml"
 # kubectl alias
 alias k='kubectl'
@@ -162,6 +166,7 @@ alias kdel='k delete'
 alias ktaint='kg node -o=jsonpath="{.spec.taints}"'
 alias exportkube="kubectl config view --minify --raw" # export current kubeconfig
 alias nodetaints='kubectl get node -o=jsonpath="{range .items[*]}{.metadata.name}{\"\t\"}{.spec.taints}{\"\n\"}{end}"'
+alias nodedrain='kubectl drain --delete-emptydir-data  --ignore-daemonsets'
 alias nodecapacity='kubectl get node -o=jsonpath="{range .items[*]}{.metadata.name}{\"\t\"}CPU: {.status.capacity.cpu}{\"\t\"}MEM: {.status.capacity.memory}{\"\t\"}PODS: {.status.capacity.pods}{\"\n\"}{end}"'
 # krew plugin binary
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
