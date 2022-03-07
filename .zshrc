@@ -84,7 +84,11 @@ alias grep='rg' # replace grep with rg
 alias vim=nvim
 alias vi=nvim
 alias lh="ll -h"
-echo "in $TERM_PROGRAM"
+if [ $TERM_PROGRAM ]
+then
+    echo "in $TERM_PROGRAM"
+fi
+
 if [ "$TERM_PROGRAM" = "iTerm.app" ]
 then
     alias ls="lsd"
