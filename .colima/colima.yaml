@@ -1,6 +1,6 @@
 vm:
     cpu: 2
-    disk: 10
+    disk: 30
     memory: 2
     arch: x86
     forward_agent: false
