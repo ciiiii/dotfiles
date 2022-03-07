@@ -22,7 +22,7 @@ plugins=(
     # brew
     common-aliases
     zsh-syntax-highlighting
-    proxy
+    # proxy
     zsh-autosuggestions
     kubectl-switch
     lazy
@@ -147,6 +147,8 @@ export GONOSUMDB=gitlab.oneitfarm.com/*
 # Rust config
 alias rustdoc="rustup doc --toolchain=stable-x86_64-apple-darwin"
 
+# Openresty&lua config
+export PATH=$PATH:/opt/homebrew/Cellar/openresty/1.19.9.1_2/luajit/bin
 
 export KUBECONFIG="$HOME/Documents/Develop/kubeconfig/config.yaml"
 # kubectl alias
