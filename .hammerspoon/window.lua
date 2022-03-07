@@ -10,12 +10,13 @@ local appMethods = {
     WeChat = {Chinese},
     Finder = {BringAllToFront},
     Code = {English},
-    Raycast = {English}
+    Raycast = {English},
+    [""] = {Chinese} -- flomo
 }
 
 local function handleWindowFocus(window, appName)
     local appObject = window:application()
-    logger.f('WindowFocus: %s [%s]', appName, window:title())
+    logger.f('WindowFocus: %q [%s]', appName, window:title())
     for app, fns in pairs(appMethods) do
         if app == appName then
             for i, fn in pairs(fns) do fn(appObject) end

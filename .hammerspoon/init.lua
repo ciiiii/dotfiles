@@ -1,7 +1,7 @@
 require('secret')
 require('window')
 require('hotkey')
-require('caffeinate')
+require('docker')
 
 hs.notify.show("hammerspoon", "Loading Config", "")
 
