@@ -1,0 +1,9 @@
+{
+    "Lua.runtime.version": "Lua 5.2",
+    "Lua.workspace.library": [
+        "/opt/homebrew/Caskroom/hammerspoon/0.9.90/Hammerspoon.app/Contents/Resources/extensions/hs"
+    ],
+    "Lua.diagnostics.globals": [
+        "hs"
+    ]
+}
