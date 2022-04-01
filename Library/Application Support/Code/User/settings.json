@@ -1,0 +1,427 @@
+{
+  // VSCode
+  // editor
+  "editor.codeActionsOnSave": {
+    "source.fixAll": false,
+    "source.fixAll.eslint": false,
+    "source.organizeImports": false
+  },
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modifications",
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "Fira Code",
+  "editor.fontSize": 16,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.largeFileOptimizations": false,
+  "editor.minimap.enabled": true,
+  "editor.codeLensFontFamily": "Hack Nerd Font",
+  "editor.suggestSelection": "recentlyUsedByPrefix",
+  "editor.foldingHighlight": false,
+  "editor.emptySelectionClipboard": false,
+  "editor.selectionHighlight": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.accessibilitySupport": "off",
+  "editor.cursorSmoothCaretAnimation": true,
+  // extensions 
+  "extensions.ignoreRecommendations": true,
+  // terminal
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.fontSize": 14,
+  // debug
+  "debug.onTaskErrors": "debugAnyway",
+  // search
+  "search.exclude": {
+    "**/.history": true,
+    "**/.venv": true
+  },
+  // expolorer
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  // files
+  "files.autoSave": "afterDelay",
+  "files.associations": {
+    ".ssh/config": "ssh_config",
+    "*.yml": "yaml",
+    "*.yaml": "yaml",
+    "*.vue": "vue",
+    "**/docker-compose.yml": "dockercompose",
+    "**/docker-compose.yaml": "dockercompose",
+    "**/templates/*.yml": "helm",
+    "**/templates/*.yaml": "helm",
+    "**/defaults/**/*": "ansible",
+    "**/tasks/**/*.yml": "ansible",
+    "**/handler/*.yml": "ansible",
+    "**/group_vars/**/*.yml": "ansible",
+    "**/host_vars/**/*.yml": "ansible",
+    "**/roles/**/*.yml": "ansible",
+    "**/playbooks/**/*.yml": "ansible",
+    "**/*ansible*/**/*.yml": "ansible",
+    "**/vars/**/*.yml": "ansible",
+    "**/inventory/*/*": "ansible",
+    "*.ipynb": "jupyter-notebook"
+  },
+  // workbench
+  "workbench.productIconTheme": "icons-carbon",
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.colorTheme": "Vitesse Light",
+  "workbench.preferredDarkColorTheme": "Vitesse Dark",
+  "workbench.preferredLightColorTheme": "Vitesse Light",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorCustomizations": {
+    "activityBarBadge.background": "#388E3C",
+    "list.activeSelectionForeground": "#388E3C",
+    "list.inactiveSelectionForeground": "#388E3C",
+    "list.highlightForeground": "#388E3C",
+    "scrollbarSlider.activeBackground": "#388E3C50",
+    "editorSuggestWidget.highlightForeground": "#388E3C",
+    "textLink.foreground": "#388E3C",
+    "progressBar.background": "#388E3C",
+    "pickerGroup.foreground": "#388E3C",
+    "tab.activeBorder": "#388E3C",
+    "notificationLink.foreground": "#388E3C",
+    "editorWidget.resizeBorder": "#388E3C",
+    "editorWidget.border": "#388E3C",
+    "settings.modifiedItemIndicator": "#388E3C",
+    "settings.headerForeground": "#388E3C",
+    "panelTitle.activeBorder": "#388E3C",
+    "breadcrumb.activeSelectionForeground": "#388E3C",
+    "menu.selectionForeground": "#388E3C",
+    "menubar.selectionForeground": "#388E3C",
+    "editor.findMatchBorder": "#388E3C",
+    // "selection.background": "#388E3C40"
+    "selection.background": "#f3f724",
+    "editor.selectionBackground": "#f3f724",
+    "editor.selectionHighlightBackground": "#00ffbf"
+  },
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  // window
+  "window.autoDetectColorScheme": false,
+  // security
+  "security.workspace.trust.untrustedFiles": "open",
+  // telemetry
+  "telemetry.telemetryLevel": "off",
+
+  
+  // Languages
+  // Python
+  "python.venvPath": ".venv",
+  "python.linting.pylintEnabled": false,
+  "python.linting.enabled": false,
+  "python.analysis.autoImportCompletions": false,
+  "python.analysis.autoSearchPaths": false,
+  "python.linting.flake8Enabled": false,
+  "python.linting.flake8Path": "flake8",
+  "python.formatting.autopep8Path": "autopep8",
+  "python.formatting.provider": "autopep8",
+  "python.languageServer": "None",
+  // enable only in python project
+  // "python.languageServer": "Pylance",
+  "python.defaultInterpreterPath": "python3",
+  "python.linting.mypyArgs": [
+    "--follow-imports=skip",
+    "--show-column-numbers",
+    "--ignore-missing-imports",
+    "--v=4"
+  ],
+  // Go
+  "go.alternateTools": {
+    "go-langserver": "gopls",
+    "gopls": "gopls"
+  },
+  "go.delveConfig": {
+    "dlvLoadConfig": {
+      "followPointers": true,
+      "maxVariableRecurse": 1,
+      "maxStringLen": 64,
+      "maxArrayValues": 64,
+      "maxStructFields": -1
+    },
+    "apiVersion": 2,
+    "showGlobalVariables": false,
+    "debugAdapter": "legacy",
+    "substitutePath": []
+  },
+  "go.buildOnSave": "off",
+  "go.buildTags": "",
+  "go.buildFlags": [],
+  "go.lintFlags": [],
+  "go.vetFlags": [],
+  "go.coverOnSave": false,
+  "go.useCodeSnippetsOnFunctionSuggest": true,
+  "go.gocodeAutoBuild": false,
+  "go.gotoSymbol.includeImports": true,
+  "go.gocodePackageLookupMode": "go",
+  "go.autocompleteUnimportedPackages": true,
+  "go.enableCodeLens": {
+    "references": true,
+    "runtest": true
+  },
+  "go.lintTool": "golint",
+  "go.toolsManagement.autoUpdate": false,
+  "go.toolsEnvVars": {
+    "GOPROXY": "https://goproxy.io,direct",
+  },
+  "go.liveErrors": {
+    "enabled": true,
+    "delay": 500
+  },
+  "go.lintOnSave": "off",
+  "gopls": {
+    // https://github.com/golang/tools/blob/master/gopls/doc/settings.md#build
+    "usePlaceholders": true,
+    "completeUnimported": true,
+    "staticcheck": true,
+    "hoverKind": "FullDocumentation",
+    "linksInHover": true
+    // "linkTarget":
+    // "formatting.local": ""
+  },
+  "go.formatTool": "default",
+  "go.languageServerExperimentalFeatures": {
+    "diagnostics": true
+  },
+  "go.useLanguageServer": false,
+  "go.languageServerFlags": [
+    "-remote=auto",
+    "-logfile=auto",
+    "-debug=:0",
+    "-rpc.trace"
+  ],
+  // Lua
+  "Lua.runtime.version": "LuaJIT",
+  "Lua.workspace.preloadFileSize": 10000,
+  "Lua.telemetry.enable": false,
+  "Lua.runtime.builtin": {
+    "jit": "enable",
+    "ffi": "enable"
+  },
+  // Rust
+  "[rust]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true,
+      "source.organizeImports": true,
+    }
+  },
+  // TypeScript
+  "typescript.format.enable": true,
+  // Defines space handling before function argument parentheses. Requires TypeScript >= 2.1.5.
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  // EcmaScript
+  "eslint.run": "onSave",
+  "eslint.options": {
+    "extensions": [
+      ".html",
+      ".js",
+      ".vue",
+      ".jsx"
+    ]
+  },
+  // An array of language ids which should be validated by ESLint
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact"
+  ],
+  "eslint.alwaysShowStatus": true,
+  
+  
+  // Extensions
+  // prettier
+  "prettier.prettierPath": "prettier",
+  // docker
+  "docker.enableDockerComposeLanguageService": false,
+  // codestats
+  "codestats.apikey": "${env:CODESTATS_APIKEY}",
+  "codestats.username": "${env:CODESTATS_USERNAME}",
+  // kubernetes
+  "vs-kubernetes": {
+    "vscode-kubernetes.kubectl-path.mac": "kubectl",
+    "vscode-kubernetes.minikube-path.mac": "",
+    "vscode-kubernetes.helm-path.mac": "helm"
+  },
+  // helm-intellisense
+  "helm-intellisense.lintFileOnSave": true,
+  "helm-intellisense.customValueFileNames": [
+    "values.yaml",
+    "values.yml",
+    "values-*.yaml",
+    "values-*.yml"
+  ],
+  // redhat commons
+  "redhat.telemetry.enabled": false,
+  // yaml
+  "yaml.customTags": [
+    "!encrypted/pkcs1-oaep scalar",
+    "!vault scalar"
+  ],
+  "yaml.schemas": {},
+  "yaml.schemaStore.enable": false,
+  "yaml.format.enable": true,
+  "yaml.completion": true,
+  "yaml.validate": true,
+  // group important(go)
+  "groupImports.onSave": false,
+  // markdown
+  "markdown-preview-github-styles.colorTheme": "dark",
+  // sourcekit-lsp(for Swift, C, C++)
+  "sourcekit-lsp.serverPath": "/usr/bin/sourcekit-lsp",
+  "sourcekit-lsp.serverArguments": [
+    "-Xswiftc",
+    "-sdk",
+    "-Xswiftc",
+    "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk",
+    "-Xswiftc",
+    "-target",
+    "-Xswiftc",
+    "arm64-apple-ios14.5-simulator"
+  ],
+  // mypy
+  "mypy.dmypyExecutable": "dmypy",
+  "mypy.runUsingActiveInterpreter": false,
+  "mypy.targets": [
+    "."
+  ],
+  // local-history
+  "local-history.enabled": 0,
+  "local-history.saveDelay": 10,
+  "local-history.maxDisplay": 30,
+  // leetcode
+  "leetcode.endpoint": "leetcode",
+  "leetcode.hint.configWebviewMarkdown": false,
+  "leetcode.showLocked": true,
+  "leetcode.workspaceFolder": "${env:HOME}/github/leedcode-practice",
+  "leetcode.defaultLanguage": "python3",
+  "leetcode.hint.commentDescription": false,
+  "leetcode.hint.commandShortcut": false,
+  "leetcode.hint.setDefaultLanguage": false,
+  // github
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": false,
+    "markdown": true
+  },
+  "github.copilot.advanced": {
+    "*": true,
+  },
+  "github.copilot.inlineSuggest.enable": true,
+  "github-actions.workflows.pinned.workflows": [
+    ".github/workflows/*.yml",
+    ".github/workflows/*.yaml"
+  ],
+  // svelte
+  "svelte.enable-ts-plugin": true,
+  // Save and Run
+  "saveAndRun": {
+    "commands": [
+      {
+        "match": ".*\\.py",
+        "isShellCommand": true,
+        "cmd": "reorder-python-imports ${file}",
+        "silent": true
+      }
+    ]
+  },
+  // ansible
+  "ansible.ansibleLint.enabled": false,
+  // Jupyter
+  "notebook.diff.enablePreview": true,
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  // Visual Studio IntelliCode
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+
+
+  // File specific VSCode config
+  "[lua]": {
+    "editor.defaultFormatter": "Koihik.vscode-lua-format",
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.autoIndent": "advanced",
+    "editor.tabSize": 2
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false,
+    "editor.autoIndent": "advanced",
+    "editor.tabSize": 2,
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false,
+    "editor.autoIndent": "advanced",
+    "editor.tabSize": 2,
+  },
+  "[NGINX]": {
+    "editor.formatOnSave": true
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": false,
+      "source.fixAll": true
+    },
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.autoIndent": "advanced",
+    "editor.tabSize": 2
+  },
+  "[go]": {
+    "editor.insertSpaces": false,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true,
+      "source.fixAll": true
+    },
+    "editor.formatOnType": true,
+    "editor.formatOnSaveMode": "file"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[ansible]": {
+    "gitlens.codeLens.scopes": [
+      "document"
+    ],
+    "editor.tabSize": 2
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "shakram02.bash-beautify"
+  },
+  "[nginx]": {
+    "editor.defaultFormatter": "ahmadalli.vscode-nginx-conf"
+  },
+  "workbench.sideBar.location": "right",
+}
