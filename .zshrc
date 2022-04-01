@@ -192,13 +192,13 @@ function netshoot() {
         kubectl run -n default netshoot -it --image=hub.oneitfarm.com/nicolaka/netshoot -- bash
     fi
 }
-
+q
 function clean_netshoot() {
     kubectl delete pod netshoot -n default --force
 }
 
-# python3 as default python
-alias python="python3"
+# add pyenv shims to PATH
+export PATH="$(pyenv root)/shims:${PATH}"
 
 # uuid
 alias uuid="python -c 'import uuid;print(\"\".join(str(uuid.uuid4()).split(\"-\")).lower())'"
