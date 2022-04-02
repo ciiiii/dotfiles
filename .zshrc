@@ -192,7 +192,7 @@ function netshoot() {
         kubectl run -n default netshoot -it --image=hub.oneitfarm.com/nicolaka/netshoot -- bash
     fi
 }
-q
+
 function clean_netshoot() {
     kubectl delete pod netshoot -n default --force
 }
