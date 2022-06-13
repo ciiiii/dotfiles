@@ -8,5 +8,4 @@ vm:
 runtime: docker
 kubernetes:
     enabled: false
-    version: ""
-port_interface: ""
+    version: v1.20.11
