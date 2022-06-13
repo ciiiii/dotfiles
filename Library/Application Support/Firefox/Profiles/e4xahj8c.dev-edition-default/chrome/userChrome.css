@@ -1,3 +1,9 @@
 notification-message[value="keyword-uri-fixup"] {
   display: none !important;
 }
+
+.browserContainer > findbar {
+  -moz-box-ordinal-group: 0;
+}
+/* https://support.mozilla.org/en-US/questions/1197650 */
+
