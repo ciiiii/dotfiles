@@ -1,7 +1,7 @@
 local hotkeyMethods = {
     -- {mods = {"ctrl"}, key = "o", fn = OpenOA},
     {mods = {"ctrl"}, key = "j", fn = JumpServer},
-    {mods = {"cmd", "shift"}, key = "r", fn = hs.reload},
+    -- {mods = {"cmd", "shift"}, key = "r", fn = hs.reload},
     {mods = {"cmd", "shift"}, key = "d", fn = function() hs.toggleConsole() end},
     {
         mods = {"cmd", "shift"},

@@ -1,0 +1,16 @@
+-- -- local foo = hs.distributednotifications.new(
+-- --                 function(name, object, userInfo)
+-- --         print("????")
+-- --         -- print(string.format("name: %s\nobject: %s\nuserInfo: %s\n", name, object,
+-- --         --                     hs.inspect(userInfo)))
+-- --     end)
+-- -- foo:start()
+-- local o = hs.axuielement.observer.new(hs.application("Safari"):pid())
+-- o:callback(function(...)
+--     print("????")
+--     print(hs.inspect(table.pack(...), {newline = " ", indent = ""}))
+-- end)
+-- -- o:addWatcher(hs.axuielement.windowElement(hs.application(
+-- --                                               "Firefox Developer Edition"):allWindows()[1]),
+-- --              "AXTitleChanged")
+-- o:start()
