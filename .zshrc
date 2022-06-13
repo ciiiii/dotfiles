@@ -1,6 +1,10 @@
 #!/bin/zsh
 # profiling
-# zmodload zsh/zprof
+if [ "$PROFILING" ]
+then
+    zmodload zsh/zprof
+fi
+
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 # Path to your oh-my-zsh installation.
@@ -40,7 +44,7 @@ plugins=(
     # navi
 )
 
-# zsh spaceship promt config
+# zsh spaceship prompt config
 SPACESHIP_TIME_SHOW=true
 SPACESHIP_KUBECTL_SHOW=true
 SPACESHIP_KUBECTL_PREFIX='using '
@@ -73,6 +77,9 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$HOME/.cargo/bin:$PATH"
 # carg ENV
 source $HOME/.cargo/env
+
+# brew installed openssl
+export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
 
 # zsh quick command
 alias zshrc="code ~/.zshrc"
@@ -146,7 +153,6 @@ export GOCACHE=$HOME/.cache/go
 export PATH=$PATH:$GOPATH/bin
 export GOPROXY=https://goproxy.io,direct
 export GO111MODULE=on
-export GONOSUMDB=gitlab.oneitfarm.com/*
 
 # Rust config
 alias rustdoc="rustup doc --toolchain=stable-x86_64-apple-darwin"
@@ -189,13 +195,35 @@ function netshoot() {
     if [ $pod_not_exist = 0 ]; then
         kubectl attach -n default netshoot --pod-running-timeout=30s -it
     else
-        kubectl run -n default netshoot -it --image=hub.oneitfarm.com/nicolaka/netshoot -- bash
+        kubectl run -n default netshoot -it --image=docker.libcuda.so/nicolaka/netshoot -- bash
     fi
 }
 
 function clean_netshoot() {
     kubectl delete pod netshoot -n default --force
 }
+
+function aws-exec() {
+    profile="${1:-snc-test}"
+    echo $profile
+    if [ -z ${AWS_VAULT} ];
+    then
+        echo "AWS_VAULT is not set"
+    else
+        echo "AWS_VAULT is set"
+        unset AWS_VAULT
+    fi
+    /opt/homebrew/bin/aws-vault exec $profile
+}
+
+alias snc-test="aws-exec snc-test"
+alias snc-stage="aws-exec snc-stage"
+alias snc-prod="aws-exec snc-prod"
+alias snc-support="aws-exec snc-support"
+alias snc-eng="aws-exec snc-eng"
+alias sn-cloud-prod="aws-exec sn-cloud-prod"
+alias snc="aws-exec snc"
+alias cs-admin="aws-exec cs-admin"
 
 # add pyenv shims to PATH
 export PATH="$(pyenv root)/shims:${PATH}"
@@ -229,6 +257,10 @@ function npm() {
     $(brew --prefix)/bin/npm $@
 }
 
+# enable gcloud cli
+source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
@@ -239,8 +271,19 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
 
-# profiling
-# zprof
+
 # source ~/custom.zsh
 source ~/secret.zsh
 export PATH=~/scripts:$PATH
+
+# profiling
+if [ "$PROFILING" ]
+then
+    zprof
+fi
+
+
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
