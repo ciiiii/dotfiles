@@ -1,7 +1,7 @@
 #!/usr/bin/expect
-
-if { $argc != 1 } {
-    send_user "Usage: host\n"
+if { $argc < 1 } {
+    spawn ssh jumpserver
+    interact
     exit
 }
 
@@ -15,10 +15,17 @@ expect {
     }
 }
 expect {
+    "*error*"
+    {
+        exit 1
+    }
+}
+expect {
     "$env(JUMPSERVER_HOSTNAME)*"
     {
         send "sudo su\r"
     }
+    
 }
 expect {
     "*\[sudo\]*"
