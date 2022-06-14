@@ -17,7 +17,6 @@ brew "helm"
 brew "terraform"
 brew "awscli"
 brew "aws-vault"
-brew "google-cloud-sdk"
 
 brew "ciiiii/tap/kube-proxycommand"
 
@@ -27,3 +26,4 @@ cask "snipaste"
 cask "visual-studio-code"
 cask "homebrew/cask-versions/firefox-developer-edition"
 cask "typora"
+cask "google-cloud-sdk"
