@@ -1,4 +1,5 @@
 tap "ciiiii/tap", "https://github.com/ciiiii/homebrew-tap.git"
+tap "microsoft/git"
 
 brew "lsd"
 brew "neovim"
@@ -6,8 +7,9 @@ brew "ripgrep"
 brew "gnupg"
 
 brew "go"
-brew "rust"
+brew "rustup-init"
 
+brew "openresty"
 brew "yadm"
 brew "pyenv"
 brew "dvm"
