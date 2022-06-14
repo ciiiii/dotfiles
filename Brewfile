@@ -4,14 +4,14 @@ tap "openresty/brew"
 tap "homebrew/cask-versions"
 tap "homebrew/cask-fonts"
 
+brew "go"
+brew "rustup-init"
+
 brew "lsd"
 brew "neovim"
 brew "ripgrep"
 brew "gnupg"
-
-brew "go"
-brew "rustup-init"
-
+brew "svn"
 brew "yadm"
 brew "pyenv"
 brew "dvm"
