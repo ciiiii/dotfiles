@@ -4,6 +4,7 @@ brew "lsd"
 brew "neovim"
 brew "ripgrep"
 brew "gnupg"
+brew "git-credential-manager-core"
 
 brew "go"
 brew "rust"
