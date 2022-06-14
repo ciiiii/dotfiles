@@ -1,5 +1,6 @@
 tap "ciiiii/tap", "https://github.com/ciiiii/homebrew-tap.git"
 tap "microsoft/git"
+tap "openresty/brew"
 
 brew "lsd"
 brew "neovim"
@@ -9,7 +10,6 @@ brew "gnupg"
 brew "go"
 brew "rustup-init"
 
-brew "openresty"
 brew "yadm"
 brew "pyenv"
 brew "dvm"
@@ -21,6 +21,7 @@ brew "awscli"
 brew "aws-vault"
 
 brew "ciiiii/tap/kube-proxycommand"
+brew "openresty/brew/openresty"
 
 cask "iterm2"
 cask "raycast"
