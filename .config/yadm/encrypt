@@ -1,3 +1,8 @@
 .hammerspoon/secret.lua
 secret.zsh
 .aws/config
+.gitconfig
+github/.gitconfig
+streamnative/.gitconfig
+coding/.gitconfig
+streamnative/.gitmessage.txt
