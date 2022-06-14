@@ -1,0 +1,6 @@
+.history
+.vscode
+.DS_Store
+values-*.yaml
+values-*.yml
+.golangci.yml
