@@ -4,16 +4,6 @@
 <dict>
 	<key>AlternateMouseScroll</key>
 	<true/>
-	<key>AppleAntiAliasingThreshold</key>
-	<integer>1</integer>
-	<key>ApplePressAndHoldEnabled</key>
-	<false/>
-	<key>AppleScrollAnimationEnabled</key>
-	<integer>0</integer>
-	<key>AppleSmoothFixedFontsSizeThreshold</key>
-	<integer>1</integer>
-	<key>AppleWindowTabbingMode</key>
-	<string>manual</string>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Nocturnal Winter</key>
@@ -2261,13 +2251,13 @@
 			<key>Name</key>
 			<string>Default</string>
 			<key>Non Ascii Font</key>
-			<string>HackNerdFontComplete-Regular 16</string>
+			<string>HackNerdFontComplete-Regular 15</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Non-ASCII Ligatures</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SourceCodePro-It 16.8</string>
+			<string>SourceCodeProRoman-Regular 15</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Place Prompt at First Column</key>
