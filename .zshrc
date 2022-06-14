@@ -58,28 +58,23 @@ then
     export PATH=/opt/homebrew/sbin:$PATH
 fi
 
-
 # brew installed completion
 if type brew &>/dev/null
 then
-    FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+    FPATH=$FPATH:$(brew --prefix)/share/zsh/site-functions
     autoload -Uz compinit
     compinit
 fi
 
 source $ZSH/oh-my-zsh.sh
 
-# SOCKS5_PROXY="http://127.0.0.1:1086"
-# HTTP_PROXY="http://127.0.0.1:1087"
-# ALL_PROXY="http://127.0.0.1:7890"
-
 # cargo binary
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH=$HOME/.cargo/bin:$PATH
 # carg ENV
 source $HOME/.cargo/env
 
 # brew installed openssl
-export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
+export PATH=$(brew --prefix openssl)/bin:$PATH
 
 # zsh quick command
 alias zshrc="code ~/.zshrc"
@@ -119,12 +114,16 @@ function gittoday() {
 }
 
 # gitignore tool
-function gi() { http_proxy=$HTTP_PROXY https_proxy=$HTTP_PROXY curl -L -s https://www.gitignore.io/api/$@; }
-function gil() { http_proxy=$HTTP_PROXY https_proxy=$HTTP_PROXY curl -L -s https://www.gitignore.io/api/list }
+function gi() {
+    curl -L -s https://www.gitignore.io/api/$@;
+}
+function gil() {
+    curl -L -s https://www.gitignore.io/api/list
+}
 
 # docker version manager
 # source dvm
-source ~/.dvm/dvm.sh
+[ -f /opt/homebrew/opt/dvm/dvm.sh ] && . /opt/homebrew/opt/dvm/dvm.sh
 #dvm use 20.10.6
 dvm use 20.10.11
 
@@ -150,7 +149,7 @@ export GOPATH=$HOME/gopath
 export GOBIN=$GOPATH/bin
 export GOROOT="$(brew --prefix golang)/libexec"
 export GOCACHE=$HOME/.cache/go
-export PATH=$PATH:$GOPATH/bin
+export PATH=$GOPATH/bin$PATH
 export GOPROXY=https://goproxy.io,direct
 export GO111MODULE=on
 
@@ -158,7 +157,7 @@ export GO111MODULE=on
 alias rustdoc="rustup doc --toolchain=stable-x86_64-apple-darwin"
 
 # Openresty&lua config
-export PATH=$PATH:/opt/homebrew/Cellar/openresty/1.19.9.1_2/luajit/bin
+export PATH=$(brew --prefix openresty)/luajit/bin:$PATH
 
 export KUBECONFIG="$HOME/Documents/Develop/kubeconfig/config.yaml"
 # kubectl alias
@@ -181,7 +180,7 @@ alias nodetaints='kubectl get node -o=jsonpath="{range .items[*]}{.metadata.name
 alias nodedrain='kubectl drain --delete-emptydir-data  --ignore-daemonsets'
 alias nodecapacity='kubectl get node -o=jsonpath="{range .items[*]}{.metadata.name}{\"\t\"}CPU: {.status.capacity.cpu}{\"\t\"}MEM: {.status.capacity.memory}{\"\t\"}PODS: {.status.capacity.pods}{\"\n\"}{end}"'
 # krew plugin binary
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export PATH=${KREW_ROOT:-$HOME/.krew}/bin:$PATH
 
 export KUBE_EDITOR='code --wait'
 
@@ -213,7 +212,7 @@ function aws-exec() {
         echo "AWS_VAULT is set"
         unset AWS_VAULT
     fi
-    /opt/homebrew/bin/aws-vault exec $profile
+    aws-vault exec $profile
 }
 
 alias snc-test="aws-exec snc-test"
@@ -226,7 +225,7 @@ alias snc="aws-exec snc"
 alias cs-admin="aws-exec cs-admin"
 
 # add pyenv shims to PATH
-export PATH="$(pyenv root)/shims:${PATH}"
+export PATH=$(pyenv root)/shims:${PATH}
 
 # uuid
 alias uuid="python -c 'import uuid;print(\"\".join(str(uuid.uuid4()).split(\"-\")).lower())'"
