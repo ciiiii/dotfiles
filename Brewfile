@@ -2,6 +2,7 @@ tap "ciiiii/tap", "https://github.com/ciiiii/homebrew-tap.git"
 tap "microsoft/git"
 tap "openresty/brew"
 tap "homebrew/cask-versions"
+tap "homebrew/cask-fonts"
 
 brew "lsd"
 brew "neovim"
@@ -33,3 +34,8 @@ cask "google-cloud-sdk"
 
 cask "microsoft/git/git-credential-manager-core"
 cask "homebrew/cask-versions/firefox-developer-edition"
+
+cask "homebrew/cask-fonts/font-fira-code"
+cask "homebrew/cask-fonts/font-source-code-pro"
+cask "homebrew/cask-fonts/font-hack-nerd-font"
+cask "homebrew/cask-fonts/font-droid-sans-mono-for-powerline"
