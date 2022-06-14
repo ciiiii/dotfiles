@@ -1,6 +1,7 @@
 tap "ciiiii/tap", "https://github.com/ciiiii/homebrew-tap.git"
 tap "microsoft/git"
 tap "openresty/brew"
+tap "homebrew/cask-versions"
 
 brew "lsd"
 brew "neovim"
@@ -27,7 +28,8 @@ cask "iterm2"
 cask "raycast"
 cask "snipaste"
 cask "visual-studio-code"
-cask "homebrew/cask-versions/firefox-developer-edition"
 cask "typora"
 cask "google-cloud-sdk"
-cask "git-credential-manager-core"
+
+cask "microsoft/git/git-credential-manager-core"
+cask "homebrew/cask-versions/firefox-developer-edition"
