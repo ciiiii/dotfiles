@@ -41,3 +41,20 @@ krew install < ~/Krewfile
 # https://sdkman.io/install
 curl -s "https://get.sdkman.io" | bash
 ```
+
+## firefox userChrome.css
+ref: [Customizing the Firefox UI with CSS](https://www.reddit.com/r/firefox/wiki/userchrome/)
+1. enable customization
+    
+    1. navigate to `about:config`
+    2. set `toolkit.legacyUserProfileCustomizations.stylesheets` to 
+2. find the profile folder
+    
+    1. navigate to `about:support`
+    2. click `about:profiles`
+    3. get the "Root Directory" of `dev-edition-default` profile
+
+3. create folder and file
+
+    1. create `chrome` folder under the profile folder
+    2. create `userChrome.css` in `chrome` folder
