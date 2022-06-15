@@ -1,6 +1,6 @@
 # dotfiles
 
-## Usage
+## yadm Usage
 
 ```bash
 # commit file
@@ -18,4 +18,20 @@ yadm submodule update --init --recursive
 
 # sync config
 yadm submodule update --recursive --remote
+```
+
+## brew
+```bash
+# init brew and yadm
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval $(/opt/homebrew/bin/brew shellenv)
+brew install yadm
+
+# install package
+brew bundle
+```
+
+## krew
+```bash
+krew install < ~/Krewfile
 ```
