@@ -35,6 +35,7 @@ cask "visual-studio-code"
 cask "typora"
 cask "google-cloud-sdk"
 cask "dozer"
+cask "wechat"
 
 cask "microsoft/git/git-credential-manager-core"
 cask "homebrew/cask-versions/firefox-developer-edition"
