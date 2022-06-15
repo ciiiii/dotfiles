@@ -121,12 +121,6 @@ function gil() {
     curl -L -s https://www.gitignore.io/api/list
 }
 
-# docker version manager
-# source dvm
-[ -f /opt/homebrew/opt/dvm/dvm.sh ] && . /opt/homebrew/opt/dvm/dvm.sh
-#dvm use 20.10.6
-dvm use 20.10.11
-
 # docker alias
 alias dockerkillall='docker kill $(docker ps -q)'
 alias dockercleanc='printf "\n>>> Deleting stopped containersn\n" && docker ps -a -q | xargs docker rm -f'
@@ -276,14 +270,20 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 source ~/secret.zsh
 export PATH=~/scripts:$PATH
 
+
+# docker version manager
+# source dvm
+[ -f /opt/homebrew/opt/dvm/dvm.sh ] && . /opt/homebrew/opt/dvm/dvm.sh
+#dvm use 20.10.6
+dvm use 20.10.11
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+
 # profiling
 if [ "$PROFILING" ]
 then
     zprof
 fi
-
-
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

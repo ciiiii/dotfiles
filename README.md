@@ -35,3 +35,9 @@ brew bundle
 ```bash
 krew install < ~/Krewfile
 ```
+
+## sdkman
+```bash
+# https://sdkman.io/install
+curl -s "https://get.sdkman.io" | bash
+```
