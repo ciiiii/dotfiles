@@ -180,6 +180,7 @@ alias nodetaints='kubectl get node -o=jsonpath="{range .items[*]}{.metadata.name
 alias nodedrain='kubectl drain --delete-emptydir-data  --ignore-daemonsets'
 alias nodecapacity='kubectl get node -o=jsonpath="{range .items[*]}{.metadata.name}{\"\t\"}CPU: {.status.capacity.cpu}{\"\t\"}MEM: {.status.capacity.memory}{\"\t\"}PODS: {.status.capacity.pods}{\"\n\"}{end}"'
 # krew plugin binary
+alias krew='k krew'
 export PATH=${KREW_ROOT:-$HOME/.krew}/bin:$PATH
 
 export KUBE_EDITOR='code --wait'
