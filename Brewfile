@@ -8,6 +8,7 @@ brew "go"
 brew "rustup-init"
 
 brew "lsd"
+brew "fzf"
 brew "neovim"
 brew "ripgrep"
 brew "gnupg"
